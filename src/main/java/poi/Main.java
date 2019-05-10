@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -19,9 +21,9 @@ public class Main {
 			FileOutputStream os = new FileOutputStream(file);
 			
 			String[] rows = {"rows1","rows2"};
-			List<String[]> colsList = new ArrayList<String[]>();
-			colsList.add(new String[]{"test-col-1","test-col-2"});
-			colsList.add(new String[]{"test-col-3","test-col-4"});
+			List<List<String>> colsList = new ArrayList<>();
+			colsList.add(Arrays.asList(new String[]{"test-col-1","test-col-2"}));
+			colsList.add(Arrays.asList(new String[]{"test-col-3","test-col-4"}));
 			PoiUtil.generateExcel(rows, colsList, os);
 			os.flush();
 			os.close();

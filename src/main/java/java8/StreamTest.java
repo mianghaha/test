@@ -51,8 +51,6 @@ public class StreamTest {
 		
 		 Map<Boolean, List<Integer>> par = set.stream().collect(Collectors.partitioningBy(x -> x > 50));
 		 System.out.println("partitioningBy,time=" + (System.currentTimeMillis() - start) + ",true.size=" + par.get(true).size() + ",false.size=" + par.get(false).size());
-	
-		 Collectors.
 	}
 	
 	public int addUp(Stream<Integer> number){

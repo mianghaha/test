@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import org.codehaus.jackson.JsonProcessingException;
 
+import utils.JsonUtil;
+
 public class ObjectTrans {
 
 

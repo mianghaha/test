@@ -6,6 +6,8 @@ import java.util.Map;
 
 import org.codehaus.jackson.JsonProcessingException;
 
+import utils.JsonUtil;
+
 public class maptest {
 
 	public static void main(String[] args) {

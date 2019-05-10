@@ -22,7 +22,7 @@ public class Test4 {
 				// TODO Auto-generated method stub
 				return new Tuple2(v1, 1);
 			}
-		}).re
+		});
 		System.out.println("Input had " + input.count() + " line");
 		for(String line : input.take(10)) {
 			System.out.println(line);
