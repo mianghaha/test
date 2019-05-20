@@ -10,7 +10,8 @@ public class IndexTest {
 		String test1 = "http://zlyjqy-1251769221.costj.myqcloud.com/image";
 		String test2 = test1 + "/111";
 		
-		System.out.println(test2.indexOf(test1));
+//		System.out.println(test2.indexOf(test1));
+		System.out.println("333".indexOf("3"));
 	}
 
 }
