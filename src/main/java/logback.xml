@@ -3,7 +3,7 @@
 
     <!-- 配置变量 -->
     <!-- 日志目录 -->
-    <property name="LOG_HOME" value="/export/logs/bilog/" />
+    <property name="LOG_HOME" value="/export/logs/test/" />
     <!-- 程序名称 -->
     <property name="APP_NAME" value="MavenTest" />
     <!-- 日志打印格式，控制台以及其他输出方式需要统一 -->

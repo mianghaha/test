@@ -10,7 +10,8 @@ public class ObjectTrans {
 
 
 	public static void main(String[] args){
-		String str_object = "{\"a\":\"123\",\"b\":\"444\",\"c\":\"555\"}";
+//		String str_object = "{\"a\":\"123\",\"b\":\"444\",\"c\":\"555\"}";
+		String str_object = "{\"a\":\"123\"}";
 		try {
 			A a = JsonUtil.TransToObject(str_object, A.class);
 			System.out.println(a);

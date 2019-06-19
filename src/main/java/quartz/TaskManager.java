@@ -118,6 +118,16 @@ public class TaskManager
 		}
 		return false;
 	}
+	
+	public static boolean isExist(JobKey key){
+		try {
+			return scheduler.checkExists(key);
+		} catch (SchedulerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
 
 	/**
 	 * 添加固定次数任务

@@ -2,14 +2,14 @@ package leetcode;
 
 /**
  * 
- * ÓÐ n ¸öÆøÇò£¬±àºÅÎª0 µ½ n-1£¬Ã¿¸öÆøÇòÉÏ¶¼±êÓÐÒ»¸öÊý×Ö£¬ÕâÐ©Êý×Ö´æÔÚÊý×é nums ÖÐ¡£
- * ÏÖÔÚÒªÇóÄã´ÁÆÆËùÓÐµÄÆøÇò¡£Ã¿µ±Äã´ÁÆÆÒ»¸öÆøÇò i Ê±£¬Äã¿ÉÒÔ»ñµÃ nums[left] * nums[i] * nums[right] ¸öÓ²±Ò¡£
- * ÕâÀïµÄ left ºÍ right ´ú±íºÍ i ÏàÁÚµÄÁ½¸öÆøÇòµÄÐòºÅ¡£×¢Òâµ±Äã´ÁÆÆÁËÆøÇò i ºó£¬ÆøÇò left ºÍÆøÇò right ¾Í±ä³ÉÁËÏàÁÚµÄÆøÇò¡£ÇóËùÄÜ»ñµÃÓ²±ÒµÄ×î´óÊýÁ¿¡£
- * ËµÃ÷:Äã¿ÉÒÔ¼ÙÉè nums[-1] = nums[n] = 1£¬µ«×¢ÒâËüÃÇ²»ÊÇÕæÊµ´æÔÚµÄËùÒÔ²¢²»ÄÜ±»´ÁÆÆ¡£ 0 ¡Ü n ¡Ü 500, 0 ¡Ü nums[i] ¡Ü 100
- * Ê¾Àý:
- * ÊäÈë: [3,1,5,8]
- * Êä³ö: 167 
- * ½âÊÍ: nums = [3,1,5,8] --> [3,5,8] -->   [3,8]   -->  [8]  --> []
+ * ï¿½ï¿½ n ï¿½ï¿½ï¿½ï¿½ï¿½ò£¬±ï¿½ï¿½Îª0 ï¿½ï¿½ n-1ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½Ð©ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ nums ï¿½Ð¡ï¿½
+ * ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ i Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô»ï¿½ï¿½ nums[left] * nums[i] * nums[right] ï¿½ï¿½Ó²ï¿½Ò¡ï¿½
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ left ï¿½ï¿½ right ï¿½ï¿½ï¿½ï¿½ï¿½ i ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¡ï¿½×¢ï¿½âµ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ i ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ left ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ right ï¿½Í±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü»ï¿½ï¿½Ó²ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * Ëµï¿½ï¿½:ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ nums[-1] = nums[n] = 1ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½Ü±ï¿½ï¿½ï¿½ï¿½Æ¡ï¿½ 0 ï¿½ï¿½ n ï¿½ï¿½ 500, 0 ï¿½ï¿½ nums[i] ï¿½ï¿½ 100
+ * Ê¾ï¿½ï¿½:
+ * ï¿½ï¿½ï¿½ï¿½: [3,1,5,8]
+ * ï¿½ï¿½ï¿½: 167 
+ * ï¿½ï¿½ï¿½ï¿½: nums = [3,1,5,8] --> [3,5,8] -->   [3,8]   -->  [8]  --> []
  * coins =  3*1*5      +  3*5*8    +  1*3*8      + 1*8*1   = 167
  *
  */
@@ -18,39 +18,37 @@ public class MaxCoins {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] nums = {3,1,5,8};
-		System.out.println(solution2(nums));
+		System.out.println(solution1(nums));
 	}
 	
 	public static int solution1(int[] nums) {
 		int len = nums.length;
 		int[][] cache = new int[len + 2][len + 2];
-		cache[0][0] = 1;
-		cache[len + 1][len + 1] = 1;
 		
 		for(int i = 1; i <= len; i++) {
 			int mid = nums[i - 1];
 			if(i > 1) {
 				mid = mid * nums[i - 2];
 			}
-			if(i < len - 1) {
-				mid = mid * nums[i + 1];
+			if(i < len) {
+				mid = mid * nums[i];
 			}
 			cache[i][i] = mid;
 		}
 		
-		for(int i = 1; i <= len; i++) {
-			for(int j = i; j <= len; j++) {
-				for(int k = i; k <= j; k++) {
-					int left = cache[i][k - 1];
-					int right =  cache[k + 1][j];
+		for(int i = 2; i <= len; i++) {
+			for(int j = 1; j <= len - i + 1; j++) {
+				for(int k = j; k <= i + j - 1; k++) {
+					int left = cache[j][k - 1];
+					int right =  cache[k + 1][i + j - 1];
 					int mid = nums[k - 1];
-					if(i > 1) {
-						mid = mid * nums[i - 2];
+					if(j > 1) {
+						mid = mid * nums[j - 2];
 					}
-					if(j < len) {
-						mid = mid * nums[j];
+					if(j + i - 1< len) {
+						mid = mid * nums[j + i - 1];
 					}
-					cache[i][j] = Math.max(cache[i][j], left + mid + right);
+					cache[j][j + i - 1] = Math.max(cache[j][j + i - 1], left + mid + right);
 				}
 			}
 		}
@@ -72,7 +70,6 @@ public class MaxCoins {
 	        }
 	        for(int j=1;j<n;j++){
 	            for(int i=1;i<n+1-j;i++){
-	                int max;
 	                for(int k=i;k<=i+j;k++){
 	                    int left = (k-1>=i)?dp[i][k-1]:0;
 	                    int right = (k+1<=i+j)?dp[k+1][i+j]:0;

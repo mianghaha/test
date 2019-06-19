@@ -10,7 +10,7 @@ import org.quartz.SchedulerException;
 
 import utils.DateUtil;
 
-public class Main {
+public class QuartzUtilTestMain {
 
 	public static void main(String[] args) {
 		try {

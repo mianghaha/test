@@ -50,7 +50,7 @@ public class CacheListTest {
 		CacheService.getInstance().delList(key);
 	}
 	
-	@Test
+	@TestInterface
 	/**
 	 * 测试全部list缓存和取出
 	 * @throws Exception
@@ -61,7 +61,7 @@ public class CacheListTest {
 		testListEquals(modelList, cacheList);
 	}
 	
-	@Test
+	@TestInterface
 	/**
 	 * 测试放入null
 	 * @throws Exception
