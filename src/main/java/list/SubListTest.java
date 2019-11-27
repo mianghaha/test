@@ -18,7 +18,7 @@ public class SubListTest {
 		a.add("6");
 		a.add("7");
 		a.add("8");
-		a = a.subList(a.size(), a.size());
+		a = a.subList(0, 1);
 		try{
 			System.out.println(JsonUtil.TransToJson(a));
 		}catch(Exception e){

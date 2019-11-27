@@ -1,6 +1,7 @@
 package object;
 
 public class point {
+	protected int a;
 
 	public static class A{
 		public A(){
