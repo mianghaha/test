@@ -3,6 +3,7 @@ package io;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
+import java.nio.channels.SelectableChannel;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
@@ -26,27 +27,32 @@ public class NIOServer {
 			ssc.register(selector, SelectionKey.OP_ACCEPT);
 			while(true) {
 				if(selector.select(TIMEOUT) == 0) {
-					System.out.println("==");
+					System.out.println("NIOServer is running");
 					continue;
 				}
 				Iterator<SelectionKey> its = selector.selectedKeys().iterator();
 				while(its.hasNext()) {
-					SelectionKey key = its.next();
-					if(key.isWritable() && key.isValid()) {
-						handleRead(key);
-					}else if(key.isReadable() ) {
-						handleRead(key);
-					}else if(key.isAcceptable()) {
-						handleRead(key);
-					}else if(key.isConnectable()) {
-						System.out.println("client is connecting.");
+					try {
+						SelectionKey key = its.next();
+						its.remove();
+						
+						if(key.isWritable() && key.isValid()) {
+							handleWirte(key);
+						}else if(key.isReadable() ) {
+							handleRead(key);
+						}else if(key.isAcceptable()) {
+							handleAccpet(key);
+						}else if(key.isConnectable()) {
+							System.out.println("client is connecting.");
+						}
+					}catch (Exception e) {
+						e.printStackTrace();
 					}
-					its.remove();
 				}
 			}
 			
 		}catch(Exception e) {
-			
+			e.printStackTrace();
 		}finally {
 			try{
                 if(selector != null){
@@ -65,20 +71,23 @@ public class NIOServer {
 		SocketChannel sc = (SocketChannel) key.channel();
 		ByteBuffer buf = (ByteBuffer) key.attachment();
 		long bytesRead = sc.read(buf);
+		String info = "";
 		while(bytesRead > 0) {
 			buf.flip();
 			while(buf.hasRemaining()){
-                System.out.print((char)buf.get());
+				info = info + (char)buf.get();
             }
 			System.out.println();
             buf.clear();
             bytesRead = sc.read(buf);
 		}
-		if(bytesRead == -1){
-            sc.close();
-        }
-		
 		System.out.println("client reading over,remote.address=" + sc.getRemoteAddress());
+		info = info + " ------received";
+		buf.put(info.getBytes());
+		key.interestOps(SelectionKey.OP_WRITE);
+//		if(bytesRead == -1){
+//      sc.close();
+//	}
 	}
 	
 	public static void handleWirte(SelectionKey key) throws IOException {
@@ -90,11 +99,13 @@ public class NIOServer {
 		}
 		buf.compact();
 		System.out.println("client wirtting over,remote.address=" + sc.getRemoteAddress());
+		key.interestOps(SelectionKey.OP_READ);
 	}
 	
 	public static void handleAccpet(SelectionKey key) throws IOException {
 		ServerSocketChannel ssc = (ServerSocketChannel) key.channel();
 		SocketChannel sc = ssc.accept();
+		sc.configureBlocking(false);
 		sc.register(key.selector(), SelectionKey.OP_READ, ByteBuffer.allocateDirect(BUF_SIZE));
 		System.out.println("client accpeting over,remote.address=" + sc.getRemoteAddress());
 	}

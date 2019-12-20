@@ -26,7 +26,6 @@ public class NIOClient {
 			}
 		};
 		t2.start();
-		Thread.currentThread().sleep(1000000);
 	}
 
 	public void client() {
@@ -42,11 +41,9 @@ public class NIOClient {
             socketChannel.connect(new InetSocketAddress("127.0.0.1",6000));
             if(socketChannel.finishConnect())
             {
-                int i=0;
-//                while(true)
-//                {
+                for(int i = 0; i < 3; i++) {
                     TimeUnit.SECONDS.sleep(10);
-                    String info = "My id is " + id + ",I'm "+i+++"-th information from client";
+                    String info = "My id is " + id + ",I'm "+ i + "-th information from client";
                     buffer.clear();
                     buffer.put(info.getBytes());
                     buffer.flip();
@@ -54,7 +51,8 @@ public class NIOClient {
                         System.out.println(buffer);
                         socketChannel.write(buffer);
                     }
-//                }
+                    Thread.sleep(1000);
+                }
             }
         }
         catch (IOException | InterruptedException e)
