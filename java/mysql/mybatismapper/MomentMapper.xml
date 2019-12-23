@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="mysql.dao.MomentDao">
+	<select id="queryByMomentId" resultType="mysql.bean.Moment">
+		SELECT
+		       momentId,content,supplement,pic1,pic2,pic3,pic4,gameId,serverId,roleId,userId,roleName,photoId,
+		       remindList,status,subjectId,hotTime,hotStatus,createTime,lastQueryTime,giftCount,popularity,npcId,
+		       mediaType,ext1,ext2,ext3
+		FROM moment
+		WHERE momentId = #{momentId}
+	</select>
+
+	<insert id="insert" parameterType="mysql.bean.Moment">
+		INSERT INTO moment
+		(momentId,content,supplement,pic1,pic2,pic3,pic4,gameId,serverId,roleId,userId,roleName,photoId,remindList,status,
+		subjectId,hotTime,hotStatus,createTime,lastQueryTime,giftCount,popularity,npcId,mediaType,ext1,ext2,ext3)
+		VALUES
+		(#{momentId},#{content},#{supplement},#{pic1},#{pic2},#{pic3},#{pic4},#{gameId},#{serverId},#{roleId},#{userId},
+		#{roleName},#{photoId},#{remindList},#{status},#{subjectId},#{hotTime},#{hotStatus},#{createTime},#{lastQueryTime},
+		#{giftCount},#{popularity},#{npcId},#{mediaType},#{ext1},#{ext2},#{ext3})
+		ON DUPLICATE KEY UPDATE momentId = momentId, status = #{status}
+	</insert>
+
+	<update id="updateStatus">
+		UPDATE moment SET status = #{status} WHERE momentId = #{momentId}
+	</update>
+</mapper>

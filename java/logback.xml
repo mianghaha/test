@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+    <!-- 配置变量 -->
+    <!-- 日志目录 -->
+    <property name="LOG_HOME" value="/export/logs/test/" />
+    <!-- 程序名称 -->
+    <property name="APP_NAME" value="MavenTest" />
+    <!-- 日志打印格式，控制台以及其他输出方式需要统一 -->
+    <property name="LOG_PATTERN" value="${APP_NAME}: [%d{yyyy-MM-dd HH:mm:ss.SSS}] [%c,%L] [%p] - %m%n" />
+
+    <!-- 输出方式 -->
+    <!-- 输出到控制台 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 输出到滚动文件 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 当前输出文件名，如果没有file节点，会把日志输出文件的名称是滚动策略中的命名规则 -->
+        <file>${LOG_HOME}${APP_NAME}.log</file>
+        <!-- 滚动策略 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- 滚动文件命名规则 -->
+            <FileNamePattern>${LOG_HOME}${APP_NAME}.%d{yyyy-MM-dd}.log</FileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <!-- 日志打印格式 -->
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 异步输出日志 -->
+    <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <!-- 缓冲队列大小，默认256 -->
+        <queueSize>256</queueSize>
+        <!-- 丢弃日志阈值，默认缓冲队列达到80%，会丢弃TRACE、DEBUG和INFO级别日志，0表示不丢弃 -->
+        <discardingThreshold>20</discardingThreshold>
+        <!-- 缓冲队列满时，输出日志是否会阻塞程序执行 -->
+        <neverBlock>false</neverBlock>
+        <!-- 只能有一个appender -->
+        <appender-ref ref="FILE" />
+    </appender>
+
+    <!-- 自定义logger，必须有name属性，level和additivity属性可选-->
+    <!--<logger name="fileLogger" level="INFO">
+        <appender-ref ref="FILE" />
+    </logger>-->
+
+    <root>
+        <level value="INFO" />
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+    </root>
+
+</configuration>
