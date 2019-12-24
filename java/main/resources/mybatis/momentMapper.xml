@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="mybatis.test.MomentMapper">
+	<select id="getMoment" parameterType="long" resultType="moment">
+		select momentId,gameId,roleId,roleName,serverId,userId,photoId,content,supplement,pic1,pic2,pic3,pic4,remindList,status,createTime,subjectId,hotTime,hotStatus from moment where momentId = #{momentId}
+	</select>
+	
+	<select id="getMomentByRoleId" parameterType="long" resultType="moment">
+		select  * from moment where roleId = #{roleId} limit 1
+	</select>
+</mapper>
