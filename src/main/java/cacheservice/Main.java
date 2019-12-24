@@ -27,6 +27,8 @@ public class Main {
 		testCacheMap();
 		testCacheMap2();
 		testLinkedCacheMap();
+
+		;
 	}
 	
 	public static void initCacheService() {

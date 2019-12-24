@@ -1,7 +1,0 @@
-userid=CC8E85ED9508B5E9EFCCEDBC98DC6483$qq,name=张志远,cellphone=18855434689,请问您的年龄处于哪个阶段=25-29,请问您的所在地是=其他
-userid=F891DF6A86E8849B3AD69A6460691E37$qq,name=满星辰,cellphone=13963292156,请问您的年龄处于哪个阶段=25-29,请问您的所在地是=其他
-userid=6ACF2734F491334E1384F13928169592$qq,name=许鹏,cellphone=15129391175,请问您的年龄处于哪个阶段=25-29,请问您的所在地是=其他
-userid=296238880BEFF170568BA32CD13D25DB$qq,name=陈程,cellphone=18521081060,请问您的年龄处于哪个阶段=25-29,请问您的所在地是=深圳
-userid=F139F0D946CF2CA792FB825F5266CC45$qq,name=曹先生,cellphone=18854642001,请问您的年龄处于哪个阶段=20-24,请问您的所在地是=其他
-userid=715538E6CF4A936AD82454E0416D143C$qq,name=董健,cellphone=18333895922,请问您的年龄处于哪个阶段=20-24,请问您的所在地是=其他
-userid=oFWDEwlmLyheaOvHSNXBg_jRzEnU$wechat,name=李宝玉,cellphone=13089182578,请问您的年龄处于哪个阶段=15-19,请问您的所在地是=其他
