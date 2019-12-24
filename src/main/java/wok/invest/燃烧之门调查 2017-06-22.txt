@@ -1,6 +1,0 @@
-userid=oFWDEwt3GqQm6GBO-SLouwO-nIbg$wechat,name=余逸群,cellphone=15572007321,请问您的年龄处于哪个阶段=20-24,请问您的所在地是=其他
-userid=54E88AE88D87B352BC962D5531DA850D$qq,name=田李兴,cellphone=18871709722,请问您的年龄处于哪个阶段=20-24,请问您的所在地是=其他
-userid=oFWDEwptG-eBrNOGWp2yYfI0S0TE$wechat,name=张捷挺,cellphone=13122605579,请问您的年龄处于哪个阶段=25-29,请问您的所在地是=上海
-userid=6996AA3497D017163664AD18A87E1605$qq,name=宋润坤,cellphone=18090494125,请问您的年龄处于哪个阶段=20-24,请问您的所在地是=其他
-userid=343427DDC527AAD023D2B34C8F4BDD7F$qq,name=冯阳,cellphone=14785344358,请问您的年龄处于哪个阶段=25-29,请问您的所在地是=其他
-userid=93884005EA3C9239DCE37179A035CAF3$qq,name=胡世鹏,cellphone=15052127272,请问您的年龄处于哪个阶段=25-29,请问您的所在地是=其他

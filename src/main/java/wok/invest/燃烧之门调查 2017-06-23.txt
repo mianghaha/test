@@ -1,5 +1,0 @@
-userid=D2A72431AE90345C5DFE858AA5712205$qq,name=刘林,cellphone=18986247119,请问您的年龄处于哪个阶段=30-34,请问您的所在地是=其他
-userid=7739015E328BFE4486B4D07334561341$qq,name=迟天立,cellphone=13796598872,请问您的年龄处于哪个阶段=20-24,请问您的所在地是=广州
-userid=2024AC0DD1ECF1143AA32223FE4B6556$qq,name=卿松,cellphone=13145202995,请问您的年龄处于哪个阶段=25-29,请问您的所在地是=其他
-userid=oFWDEwu6p2LNEP2-8hkjlh-LhtgY$wechat,name=吴亮,cellphone=15950820270,请问您的年龄处于哪个阶段=30-34,请问您的所在地是=其他
-userid=oFWDEwu41-EkMRIWQwqoZXdvlldU$wechat,name=张相凯,cellphone=18462053772,请问您的年龄处于哪个阶段=15-19,请问您的所在地是=其他
