@@ -123,7 +123,7 @@ public class NIOServer {
 			pos = pos + size;
 			writeBuffer.flip();
             while(writeBuffer.hasRemaining()){
-            	sc.write(writeBuffer);
+            	int i = sc.write(writeBuffer);
             }
             writeBuffer.clear();
 		}

@@ -6,6 +6,7 @@ public class chufa {
 		// TODO Auto-generated method stub
 		System.out.println(3/2);
 		System.out.println(65536%128);
+		System.out.println(0x1002);
 	}
 
 }

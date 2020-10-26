@@ -8,7 +8,10 @@ public class Reg {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String realname = "面";
-		System.out.println(isInValidRealname(realname));
+//		System.out.println(isInValidRealname(realname));
+		
+		String[] array = "1|".split("\\|");
+		System.out.println(array.length);
 	}
 
 	public static boolean isInValidRealname(String realname)

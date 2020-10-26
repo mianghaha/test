@@ -21,10 +21,17 @@ public class ReentrantLockTest {
 //		lock.unlock();
 		
 		//锁未拿到
-		Condition c = lock.newCondition();
-//		lock.lock();
-		c.await();
-		System.out.println("1111");
+//		Condition c = lock.newCondition();
+////		lock.lock();
+//		c.await();
+//		System.out.println("1111");
+		
+		//重入
+		lock.lock();
+		System.out.println("lock first time");
+		lock.lock();
+		System.out.println("lock second time");
+		
 	}
 
 }
